@@ -67,7 +67,6 @@ static void scm_disable_sdi(void);
  */
 static int download_mode = 1;
 static bool force_warm_reboot;
-static int in_panic;
 
 #ifdef CONFIG_QCOM_DLOAD_MODE
 #define EDL_MODE_PROP "qcom,msm-imem-emergency_download_mode"
@@ -76,6 +75,7 @@ static int in_panic;
 #define KASLR_OFFSET_PROP "qcom,msm-imem-kaslr_offset"
 #endif
 
+static int in_panic;
 static struct kobject dload_kobj;
 static int dload_type = SCM_DLOAD_FULLDUMP;
 static void *dload_mode_addr;
