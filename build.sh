@@ -5,7 +5,7 @@
 ## Copy this script inside the kernel directory
 KERNEL_DEFCONFIG=vendor/miatoll-perf_defconfig
 ANYKERNEL3_DIR=$PWD/AnyKernel3/
-FINAL_KERNEL_ZIP=Niggatron-KSU-MiAtoll-$(date '+%Y%m%d').zip
+FINAL_KERNEL_ZIP=Niggatron-NonKSU-MiAtoll-$(date '+%Y%m%d').zip
 export PATH="$HOME/tools/yuki-clang/bin:$PATH"
 export ARCH=arm64
 export KBUILD_BUILD_HOST=Github-CI
