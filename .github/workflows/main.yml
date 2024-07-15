@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [ nigga ]
+    branches: [ non-ksu ]
 jobs:
   node-docker:
     runs-on: ubuntu-latest
