@@ -67,7 +67,6 @@ cp $PWD/out/arch/arm64/boot/dts/qcom/cust-atoll-ab.dtb $ANYKERNEL3_DIR/dtb
 echo "**** Time to zip up! ****"
 cd $ANYKERNEL3_DIR/
 zip -r9 "../$FINAL_KERNEL_ZIP" * -x README $FINAL_KERNEL_ZIP
-MD5CHECK=$(md5sum "../$FINAL_KERNEL_ZIP" | cut -d' ' -f1)
 
 echo "**** Done, here is your MD5 ****"
 cd ..
@@ -80,6 +79,4 @@ md5sum $FINAL_KERNEL_ZIP
 
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
-post_msg="Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s)
-MD5 Checksum: $MD5CHECK"
-curl -v -F chat_id=$chat_id -F document=@$FINAL_KERNEL_ZIP -F caption="$post_msg" https://api.telegram.org/bot$token/sendDocument
+echo "Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s)
